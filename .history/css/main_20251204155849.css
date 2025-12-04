@@ -34,7 +34,7 @@ body {
     text-align: center;
 
     /* Fondo */
-    background-image: url('images/fondo.png');
+    background-image: url('/images/fondo.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
