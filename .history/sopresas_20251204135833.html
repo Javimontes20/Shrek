@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige una Sorpresa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sopresas.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1 class="title">Elige una <br>sorpresa</h1>
+
+        <div class="buttons-container">
+            <div class="top-buttons">
+                <button class="surprise-button button-1">Sorpresa 1</button>
+                <button class="surprise-button button-2">Sorpresa 2</button>
+            </div>
+
+            <button class="surprise-button button-3 solo-button">Sorpresa 3</button>
+
+            <p class="conditions">
+                (TODAS LAS SORPRESAS SERÁN BAJO MIS CONDICIONES, OBLIGATORIO QUE ABRAS UNA)
+            </p>
+        </div>
+    </div>
+<!-- Botón de volver -->
+    <button class="shrek-back-button" onclick="history.back()">
+        <img src="boton.png" alt="Icono de Shrek" class="shrek-icon">
+        <span class="button-text">Volver</span>
+    </button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Sorpresa">
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        // Array de sorpresas con imagen y texto
+        const sorpresas = [
+            { img: 'nieve.png', text: '¡Enhorabuena! Has ganado… prepárate que nos vamos a la nieve a pasarlo en grande ❄️⛷️ ' },
+            { img: 'minigolf.png', text: '¡Has ganado un plan más tranquilo! Vamos a un minigolf a demostrar quién tiene más puntería ⛳' },
+            { img: 'sendero.png', text: '¡Ohhh, lo siento! Has perdido… 😅 Pero no pasa nada, ¡nos vamos a hacer una superruta de senderismo! Prepárate para tener agujetas durante 2 semanas!! 🚶‍♂️🌲' }
+        ];
+
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalText = document.getElementById('modal-text');
+        const closeBtn = document.querySelector('.close');
+
+        const buttons = document.querySelectorAll('.surprise-button');
+
+        buttons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImage.src = sorpresas[index].img;
+                modalText.textContent = sorpresas[index].text;
+            });
+        });
+
+        // Cerrar modal al pulsar la X
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Cerrar modal al pulsar fuera del contenido
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

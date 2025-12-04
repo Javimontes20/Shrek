@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrek Vibes Intro 😏💚</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --shrek-verde: #78a22f;
+            --shrek-marron: #6b4b27;
+            --shrek-crema: #f4e1c1;
+            --pantano-verde: #5a7d24;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Neue', cursive;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Pantalla completa para intro */
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--pantano-verde);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: var(--shrek-crema);
+            text-align: center;
+        }
+
+        #intro video {
+            max-width: 80%;
+            border: 5px solid var(--shrek-marron);
+            border-radius: 12px;
+            box-shadow: 0 0 15px #00000066;
+        }
+
+        #continueBtn {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--shrek-marron);
+            color: var(--shrek-crema);
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s all;
+        }
+
+        #continueBtn:hover {
+            background-color: var(--shrek-crema);
+            color: var(--shrek-marron);
+            transform: translateY(-2px);
+        }
+
+        /* Página principal */
+        #main {
+            display: none;
+            background: linear-gradient(180deg, var(--pantano-verde) 0%, var(--shrek-verde) 100%);
+            color: var(--shrek-crema);
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px var(--shrek-marron);
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px var(--shrek-marron);
+        }
+
+        img {
+            max-width: 220px;
+            border: 5px solid var(--shrek-marron);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px #00000066;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: var(--shrek-marron);
+            color: var(--shrek-crema);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 0 #4b351b;
+            transition: 0.2s all;
+        }
+
+        a.button:hover {
+            background-color: var(--shrek-crema);
+            color: var(--shrek-marron);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 #4b351b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Intro con video -->
+    <div id="intro">
+        <video id="shrekVideo" autoplay>
+            <source src="Grabación de pantalla 2025-12-04 a las 10.52.49.mov" type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
+        <button id="continueBtn">Continuar 😏💚</button>
+    </div>
+
+    <!-- Página principal -->
+    <div id="main">
+        <h1>Oops… nivel Shrek 😏💚</h1>
+        <p>Ups, esta foto tuya es épica 😂</p>
+        <img src="https://via.placeholder.com/220x220.png?text=Foto+graciosa" alt="Foto graciosa">
+        <a class="button" href="https://open.spotify.com/track/0WqIKmW4BTrj3eJFmnCKMv" target="_blank">
+            Tu himno: Accidentally in Love 🎵
+        </a>
+    </div>
+
+    <script>
+        const video = document.getElementById('shrekVideo');
+        const btn = document.getElementById('continueBtn');
+        const main = document.getElementById('main');
+        const intro = document.getElementById('intro');
+
+        // Cuando el video termina, mostramos el botón
+        video.addEventListener('ended', () => {
+            btn.style.display = 'inline-block';
+        });
+
+        // Al clicar continuar, ocultamos intro y mostramos página principal
+        btn.addEventListener('click', () => {
+            intro.style.display = 'none';
+            main.style.display = 'block';
+        });
+    </script>
+
+</body>
+
+</html>

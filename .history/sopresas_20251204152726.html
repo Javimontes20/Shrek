@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige una Sorpresa Aleatoria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sopresas.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">Elige tu Sorpresa</h1>
+
+        <button class="surprise-button">¡Sorpresa Aleatoria!</button>
+    </div>
+
+    <!-- Botón de volver -->
+    <button class="shrek-back-button" onclick="history.back()">
+        <img src="boton.png" alt="Icono de Shrek" class="shrek-icon">
+        <span class="button-text">Volver</span>
+    </button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Sorpresa">
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        // Lista de sorpresas, Bolera y Billar juntos
+       const sorpresas = [
+            { img: 'nieve.png', text: 'Nieve ❄️ \n¡Vamos a la Nieve! Prepárate para pasar frío y que se te encrespe el pelo con la humedad 😂, espero que a Amancio Ortega le hayas comprado ropa para la nieve porque la vas a necesitar… ¡la vas a necesitar de verdad! 🧣🥶⛄' },
+
+            { img: 'minigolf.png', text: 'Minigolf ⛳ \nMini-golf, vamos a demostrar quién tiene menos puntería… bueno, ya sabemos quién es, pero por reírnos un rato jugamos 😏😂🏌️‍♂️🤣' },
+
+            { img: 'sendero.png', text: 'Senderismo 🥾 \n¡La mejor sorpresa que te podía tocar! Nos vamos de SENDERISMO, prepárate para tener agujetas durante dos semanas, y no vale decir que no, que te conozco 😜😅🌲🚶‍♂️💪' },
+
+            { img: 'escape.png', text: 'Escape Room 🔐 \nVamos a demostrar que con nuestras dos neuronas juntas podremos salir del escape room 🧠😂, demuestra tu intelecto, el mío ya está más que demostrado 😏🤣🔍🕵️‍♂️🔓' },
+
+            { img: 'kayak.png', text: 'Kayak 🛶 \nKayak, en esta salgo perdiendo yo porque tú no vas a remar 😂, pero bueno… te tiro del kayak y te dejo por ahí y santas pascuas :) 😎💦🌊🤣🛟' },
+
+            { img: 'picnic.png', text: 'Picnic 🧺 \nPlan chill, jugar a las cartas, gano yo como de costumbre y a disfrutar 😌🥪🍉✨🃏😏🤣' },
+
+            { img: 'alhambra.png', text: 'Alhambra 🏰 \nVisita a la Alhambra, cumplir nuestro sueño frustrado 🌙✨, vamos por la noche y cenamos en La Loca María, pero esta vez pedimos menos que te pasaste la otra vez 😂🍽️🌃😅' },
+
+            { img: 'paintball.png', text: 'Paintball 🎯 \nVenga Rambo, demuestra tus habilidades de guerra, esto puede salir muy bien o muy mal 😏🔥🔫🤣💥🛡️' },
+
+            { img: 'bolera-billar.png', text: 'Bolos y Billar 🎳🎱 \nTe dejo que me retes a los bolos ya que perdiste la otra vez 😜😂, e intento ganarte al billar que siempre me ganas con trampas y tu suerte legendaria 😏🍀🤣🎯' },
+
+            { img: 'ceramica.png', text: 'Cerámica 🏺 \nTaller de cerámica, esto puede ser muy gracioso 😂, gana el que menos destrozo cause, no sé quién de los dos lo va a hacer peor 😏🤣🎨✨' }
+        ];
+
+
+        const button = document.querySelector('.surprise-button');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalText = document.getElementById('modal-text');
+        const closeBtn = document.querySelector('.close');
+
+        let lastIndex = -1;
+
+        button.addEventListener('click', () => {
+            let index;
+            do {
+                index = Math.floor(Math.random() * sorpresas.length);
+            } while (index === lastIndex);
+            lastIndex = index;
+
+            modal.style.display = 'flex';
+            modalImage.src = sorpresas[index].img;
+            modalText.textContent = sorpresas[index].text;
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

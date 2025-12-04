@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige una Sorpresa Aleatoria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sopresas.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">Elige tu Sorpresa</h1>
+
+        <button class="surprise-button">¡Sorpresa Aleatoria!</button>
+    </div>
+
+    <!-- Botón de volver -->
+    <button class="shrek-back-button" onclick="history.back()">
+        <img src="boton.png" alt="Icono de Shrek" class="shrek-icon">
+        <span class="button-text">Volver</span>
+    </button>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Sorpresa">
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        // Lista de sorpresas, Bolera y Billar juntos
+        const sorpresas = [
+            { img: 'nieve.png', text: 'Vamos a la Nieve! Preparate para pasar frio y que se te encrespe el pelo con la humedad, espero que a Amancio Ortega le hayas comprado ropa para la nieve por la vas a necesitar!' },
+            { img: 'minigolf.png', text: 'Minigolf, vamos a demostrar quien tiene menos punteria, ya sabemos quien es pero por reirnos un rato vamos a jugar' },
+            { img: 'sendero.png', text: 'La mejor sorpresa que te podia tocar, nos vamos de SENDERISMO, preparate para tener agujetas durante dos semanas, no vale decir que no que te conzco' },
+            { img: 'escape.png', text: 'Vamos a demostrar que con nuestras dos neuronas juntas podremos salir del escape room, demuestra tu intelecto, el mio ya esta mas que demostrado' },
+            { img: 'kayak.png', text: 'Kayak, en esta salgo perdiendo yo porque tu no vas a remar, pero bueno te tiro del kayak y te dejo por ahi y santas pascuas :)' },
+            { img: 'picnic.png', text: 'Plan chill, jugar a las cartas, gano yo como de costumbre y a disfrutar ' },
+            { img: 'alhambra.png', text: 'Cumplir nuestro sueño frustado, vamos por la noche y cenamos en La Loca María, pero pedimos menos que te pasaste la otra vez' },
+            { img: 'paintball.png', text: 'Venga Rambo, demuestra tus habilidades de guerra, esto puede salir muy bien o muy mal' },
+            { img: 'bolera-billar.png', text: 'Te dejo que me retes a los bolos ya que perdiste la otra vez, e intento ganarte al billar que siempre me ganas con trampas y suerte legendaria' },
+            { img: 'ceramica.png', text: 'Esto puede ser muy gracioso, quien demuestre mejor sus habilidades artisticas gana, no se quien de los dos lo va a hacer peor' }
+        ];
+
+        const button = document.querySelector('.surprise-button');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalText = document.getElementById('modal-text');
+        const closeBtn = document.querySelector('.close');
+
+        let lastIndex = -1;
+
+        button.addEventListener('click', () => {
+            let index;
+            do {
+                index = Math.floor(Math.random() * sorpresas.length);
+            } while (index === lastIndex);
+            lastIndex = index;
+
+            modal.style.display = 'flex';
+            modalImage.src = sorpresas[index].img;
+            modalText.textContent = sorpresas[index].text;
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

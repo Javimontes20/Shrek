@@ -1,0 +1,155 @@
+/* Importar la fuente para el título */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* --- 1. Estilos Globales y de Fondo (Body y Container) --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+.container {
+    background-image: url('/granada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --- 2. Estilo del Título Principal --- */
+.title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 3.5em;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+/* --- 3. Contenedor de los Botones --- */
+.buttons-container {
+    width: 100%;
+    max-width: 500px;
+    /* Un poco más ancho para que quepan los dos botones uno al lado del otro */
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- NUEVO ESTILO: Contenedor para Botones 1 y 2 --- */
+.top-buttons {
+    display: flex;
+    justify-content: space-around;
+    /* Distribuye el espacio entre los botones */
+    width: 90%;
+    margin-bottom: 10px;
+    /* Espacio entre la fila superior y el botón inferior */
+}
+
+/* --- 4. Estilo de los Botones --- */
+.surprise-button {
+    /* ANCHO: Se ajusta para que quepan dos, sin ocupar tanto */
+    width: 45%;
+    padding: 18px 10px;
+    /* Ajuste vertical, menos horizontal */
+    margin: 10px 5px;
+    /* Pequeño margen entre ellos */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    font-size: 1.1em;
+    /* Ligeramente más pequeño para caber mejor */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.25),
+        0 0 15px rgba(255, 255, 255, 0.1) inset;
+    text-align: center;
+}
+
+/* Estilo específico para el botón que va solo (Botón 3) */
+.solo-button {
+    width: 90%;
+    /* Vuelve a ser ancho para destacar en el centro */
+    max-width: 350px;
+}
+
+/* Estilo para el hover (interacción) */
+.surprise-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2) inset;
+}
+
+.surprise-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos de color de los botones (mantienen el esquema anterior) */
+.button-1 {
+    background-color: #f5f5f5;
+    color: #444;
+}
+
+.button-2 {
+    background-color: #9ccc65;
+    color: #333;
+}
+
+.button-3 {
+    background-color: #f5f5f5;
+    color: #444;
+}
+
+/* --- 5. Estilo de la Nota Legal/Condiciones --- */
+.conditions {
+    color: #f0f0f0;
+    font-size: 0.9em;
+    margin-top: 25px;
+    padding: 0 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* --- 6. Media Query para Responsividad (Asegurar que en móviles vuelvan a apilarse) --- */
+@media (max-width: 600px) {
+    .title {
+        font-size: 3em;
+        margin-top: 30px;
+    }
+
+    /* En pantallas pequeñas, los botones vuelven a apilarse para mejor visibilidad */
+    .top-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .surprise-button {
+        width: 90%;
+        /* Ocupan más ancho cuando están apilados */
+        margin: 10px 0;
+        font-size: 1.2em;
+        max-width: 350px;
+    }
+
+    .solo-button {
+        width: 90%;
+    }
+}

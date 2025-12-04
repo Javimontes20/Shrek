@@ -1,0 +1,55 @@
+/* ==============================
+   Reset y Body
+============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    /* fondo oscuro para resaltar la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ==============================
+   Contenedor principal de la imagen
+============================== */
+.imagen-contenedor {
+    max-width: 400px;
+    /* tamaño máximo de la imagen */
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+/* Efecto hover */
+.imagen-contenedor:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ==============================
+   Responsivo
+============================== */
+@media (max-width: 600px) {
+    .imagen-contenedor {
+        max-width: 90%;
+    }
+}

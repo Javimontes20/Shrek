@@ -1,0 +1,151 @@
+/* Fuente título */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* --- Body y container --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    overflow-x: hidden;
+    /* Evita scroll horizontal */
+}
+
+.container {
+    background-image: url('/granada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px 50px 20px;
+    /* Quita margen superior para eliminar borde */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Contenido desde arriba */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --- Título --- */
+.title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 3.5em;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+    margin: 50px 0 30px 0;
+    /* Más separación del resto */
+    line-height: 1.1;
+    text-align: center;
+}
+
+/* --- Contenedor de los botones --- */
+.buttons-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor superior de dos botones */
+.top-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* --- Botones --- */
+.surprise-button {
+    padding: 18px 12px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradientes modernos */
+.button-1 {
+    background: linear-gradient(135deg, #7b5cff, #4a3aff);
+}
+
+.button-2 {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.button-3 {
+    background: linear-gradient(135deg, #ff8c42, #ff5e62);
+}
+
+/* Tamaños de botones */
+.button-1,
+.button-2 {
+    width: 48%;
+}
+
+.solo-button {
+    width: 90%;
+    max-width: 350px;
+}
+
+/* Hover y active */
+.surprise-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.surprise-button:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Nota legal --- */
+.conditions {
+    color: #f0f0f0;
+    font-size: 0.9em;
+    margin-top: 25px;
+    padding: 0 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* --- Responsivo --- */
+@media (max-width:600px) {
+    .title {
+        font-size: 3em;
+        margin-top: 30px;
+    }
+
+    .top-buttons {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .button-1,
+    .button-2,
+    .solo-button {
+        font-size: 1em;
+    }
+
+    .solo-button {
+        width: 90%;
+    }
+}

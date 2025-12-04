@@ -1,0 +1,148 @@
+/*
+    Estilos Generales
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    /* Color de fondo general si no se carga el principal */
+}
+
+/*
+    Contenedor principal para centrar el contenido y aplicar el fondo
+*/
+.container {
+    width: 100%;
+    max-width: 400px;
+    /* Ancho típico de una vista móvil */
+    height: 100vh;
+    /* Opcional: para forzar la altura en móviles */
+   
+    /* Verde más oscuro del fondo */
+
+    /* Degradado de fondo y silueta (asumiendo que la imagen de Shrek es parte del fondo) */
+    background-image:
+        url('shrek-background-tcjjcyrtj9w8gttb.jpg'),
+        /* 1. Silueta de Shrek y el paisaje */
+        linear-gradient(to bottom, #7fc04a 0%, #5d8e27 100%);
+    /* 2. Degradado de verde */
+
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain, cover;
+    /* Ajusta la imagen superior y cubre el resto */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20vh;
+    /* Espacio para que el texto esté debajo de la silueta */
+    box-sizing: border-box;
+}
+
+/*
+    Estilos del Contenido (Texto)
+*/
+.content h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    /* Simulación de la fuente */
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content p {
+    color: white;
+    font-size: 1.1em;
+    margin: 10px 0 30px;
+    font-style: italic;
+}
+
+/*
+    Estilos de Botones
+*/
+.buttons-section {
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: #e5ffe5;
+    /* Blanco verdoso claro */
+    color: #5d8e27;
+    /* Texto verde oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Verde más transparente */
+    color: white;
+    border: 1px solid white;
+}
+
+/* Hover (opcional para un toque extra) */
+.primary-btn:hover {
+    background-color: #c9e0c9;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+    Estilos de la Sección de Video
+*/
+/* Ajustes para la Sección de Video */
+.video-section {
+    width: 90%;
+    /* Aseguramos que el video tenga márgenes arriba y abajo */
+    margin: 20px 0;
+}
+
+.youtube-placeholder {
+    width: 100%;
+    padding-top: 56.25%;
+    /* Relación de aspecto 16:9 */
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    /* Es importante que sea 'relative' */
+    overflow: hidden;
+    /* Para asegurar que el video respete el borde redondeado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para hacer el video responsive y llenar el contenedor */
+.youtube-placeholder video {
+    position: absolute;
+    /* Posiciona el video sobre el padding-top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Asegura que el video cubra todo el espacio sin distorsión */
+    border-radius: 8px;
+    /* Mantiene los bordes redondeados */
+}

@@ -1,0 +1,58 @@
+/* Estilos generales */
+body {
+    background-color: #4a4a4a;
+    /* Fondo gris oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.tarjeta {
+    width: 350px;
+    /* Ajusta el ancho según sea necesario */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos de la imagen */
+.imagen-contenedor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Opcional: para bordes redondeados */
+    /* Aquí se aplicarían los estilos para darle la forma de la imagen de la captura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos del texto */
+.texto-principal {
+    color: #92e03b;
+    /* Color verde vibrante */
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 30px 0;
+    line-height: 1.2;
+}
+
+/* Estilos del código de Spotify */
+.spotify-codigo {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen de Spotify */
+.spotify-codigo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

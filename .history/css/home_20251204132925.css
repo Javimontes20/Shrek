@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    background-color: #4a4a4a;
+    /* Fondo gris oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Aplicación de la fuente Montserrat */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tarjeta {
+    width: 350px;
+    /* Ajusta el ancho según sea necesario */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos de la imagen */
+.imagen-contenedor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Opcional: para bordes redondeados */
+    /* Aquí se aplicarían los estilos para darle la forma de la imagen de la captura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos del texto */
+.texto-principal {
+    color: #92e03b;
+    /* Color verde vibrante */
+    /* Aumento del tamaño para mayor impacto */
+    font-size: 1.8em;
+    font-weight: 700;
+    /* Asegura que la fuente cargada (Bold/700) se use */
+    margin: 40px 0;
+    /* Aumento de margen para más espacio vertical */
+    line-height: 1.2;
+}
+
+/* Contenedor del botón */
+.spotify-codigo {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen dentro del botón */
+.spotify-codigo a img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Estilo para que el código de Spotify se vea más pequeño y centrado */
+    width: 80%;
+}
+
+/* Efecto hover */
+.spotify-codigo a:hover img {
+    transform: scale(1.05);
+    /* ligero zoom al pasar el ratón */
+}

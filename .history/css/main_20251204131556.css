@@ -1,0 +1,137 @@
+/*
+    Estilos Generales
+*/
+body {
+    font-family: Arial, sans-serif;
+    /* Aseguramos que el cuerpo ocupe la altura total de la ventana */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/*
+    Contenedor principal para centrar el contenido y aplicar el fondo
+*/
+.container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+
+    /* Fondo de imagen */
+    background-image: url('/shrek-background-tcjjcyrtj9w8gttb.jpg');
+
+    /* Cambios para que se vea mejor */
+    background-repeat: no-repeat;
+    background-position: center top;
+    /* centrado horizontal, parte superior visible */
+    background-size: contain;
+    /* se ajusta a todo el contenedor sin recortarse */
+    background-attachment: fixed;
+    /* efecto parallax ligero */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20vh;
+    box-sizing: border-box;
+}
+
+/*
+    Estilos del Contenido (Texto)
+*/
+.content h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    /* Simulación de la fuente */
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content p {
+    color: white;
+    font-size: 1.1em;
+    margin: 10px 0 30px;
+    font-style: italic;
+}
+
+/*
+    Estilos de Botones
+*/
+.buttons-section {
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: #e5ffe5;
+    /* Blanco verdoso claro */
+    color: #5d8e27;
+    /* Texto verde oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Fondo semi-transparente para que se vea la imagen */
+    color: white;
+    border: 1px solid white;
+}
+
+/* Hover (opcional para un toque extra) */
+.primary-btn:hover {
+    background-color: #c9e0c9;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+    Estilos de la Sección de Video
+*/
+.video-section {
+    width: 90%;
+    margin: 20px 0;
+}
+
+.youtube-placeholder {
+    width: 100%;
+    padding-top: 56.25%;
+    /* Relación de aspecto 16:9 */
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para hacer el video responsive y llenar el contenedor */
+.youtube-placeholder video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}

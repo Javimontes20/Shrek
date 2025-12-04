@@ -1,0 +1,169 @@
+/* Importar la fuente para el título */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* --- 1. Estilos Globales y de Fondo (Body y Container) --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    /* Centrado horizontal para el body */
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-image: url('/granada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Mueve el contenido a los bordes superior e inferior, dejando el centro libre */
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --- 2. Estilo del Título Principal --- */
+.title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 3.2em;
+    color: #fff;
+    /* Sombra de texto simplificada para minimalismo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+    text-align: center;
+    /* Mantenemos un margen superior para que no toque el borde */
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* --- 3. Contenedor de los Botones --- */
+.buttons-container {
+    width: 100%;
+    max-width: 500px;
+    /* Mueve el contenedor a la parte inferior del .container */
+    align-self: center;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Contenedor para Botones 1 y 2 (Flexbox para la fila) --- */
+.top-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre los dos botones */
+    width: 95%;
+    /* Ocupa más del max-width para separarlos */
+    max-width: 400px;
+    /* Ancho máximo para el grupo de dos */
+    margin-bottom: 10px;
+}
+
+/* --- 4. Estilo de los Botones (Minimalista) --- */
+.surprise-button {
+    /* ANCHO: Se ajusta para que quepan dos, minimalista */
+    width: 48%;
+    padding: 15px 10px;
+    margin: 0;
+    /* Quitamos márgenes individuales, ya gestionados por .top-buttons */
+    border: none;
+    /* Borde quitado para un look más limpio */
+    border-radius: 10px;
+    /* Bordes menos redondeados (cuadrado suave) */
+    font-size: 1.1em;
+    font-weight: 600;
+    /* Menos negrita */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /* Sombra plana y sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* Efecto Hover minimalista */
+.surprise-button:hover {
+    opacity: 0.85;
+    /* Simplemente se vuelve un poco transparente */
+    transform: none;
+    /* Quitamos el efecto 3D de movimiento */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.surprise-button:active {
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Estilo específico para el botón que va solo (Botón 3) */
+.solo-button {
+    width: 95%;
+    /* Ocupa el mismo ancho que el contenedor de arriba */
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos de color de los botones (mantenemos el esquema) */
+.button-1 {
+    background-color: #ffffff;
+    color: #444;
+}
+
+.button-2 {
+    background-color: #aed581;
+    /* Verde claro */
+    color: #333;
+}
+
+.button-3 {
+    background-color: #ffffff;
+    color: #444;
+}
+
+/* --- 5. Estilo de la Nota Legal/Condiciones --- */
+.conditions {
+    color: #f0f0f0;
+    font-size: 0.8em;
+    margin-top: 15px;
+    padding: 0 10px;
+    /* Sombra de texto muy fuerte para legibilidad sobre cualquier fondo */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* --- 6. Media Query para Responsividad (Moviles) --- */
+@media (max-width: 500px) {
+    .title {
+        font-size: 2.8em;
+        margin-top: 15px;
+    }
+
+    /* En móviles, los dos botones se apilan, ocupando el ancho completo */
+    .top-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: none;
+    }
+
+    .surprise-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .solo-button {
+        width: 90%;
+        max-width: none;
+    }
+}

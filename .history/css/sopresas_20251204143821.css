@@ -1,0 +1,332 @@
+/* ==============================
+   Fuentes
+============================== */
+/* Manteniendo las fuentes divertidas */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* ==============================
+   Reset y Body - ¡Estilo Ciénaga!
+============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    /* Color de texto blanco para contraste */
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Cambiado a columna para centrar mejor el contenido principal */
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #5d5d4d;
+    /* Marrón oscuro/verde pantano */
+    background-image: url('/granada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    padding-top: 80px;
+    /* Aumentado para separar del botón "Volver" */
+}
+
+/* ==============================
+   Botón volver - Donkey Edition
+============================== */
+.shrek-back-button {
+    position: fixed;
+    /* Usamos fixed para que esté siempre visible y no interfiera con el padding del body */
+    top: 25px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #a9804e;
+    /* Marrón de Madera/Burro */
+    border: 3px solid #2e2e21;
+    /* Borde oscuro */
+    border-radius: 30px;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #2e2e21;
+    /* Texto oscuro */
+    font-family: 'Luckiest Guy', cursive;
+    /* Fuente más amigable y ruidosa */
+    font-size: 1.1em;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 #2e2e21;
+    /* Sombra que le da volumen */
+    transition: all 0.1s ease;
+    z-index: 100;
+}
+
+.shrek-back-button:hover {
+    background-color: #c09a65;
+    /* Marrón más claro al pasar el ratón */
+    transform: translate(0, -1px);
+    box-shadow: 6px 6px 0 #2e2e21;
+}
+
+.shrek-back-button:active {
+    transform: translate(4px, 4px);
+    /* Efecto de pulsación que hunde el botón */
+    box-shadow: 0 0 0 #2e2e21;
+}
+
+.shrek-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #92e03b;
+    /* Verde Ogro */
+    border: 2px solid #2e2e21;
+}
+
+/* ==============================
+   Contenedor principal
+============================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centrar verticalmente el contenido principal */
+    width: 100%;
+    max-width: 550px;
+    /* Un poco más ancho */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Añadimos un fondo sutil de ciénaga al contenedor */
+    background: rgba(33, 40, 24, 0.6);
+    /* Fondo semi-transparente color pantano */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ==============================
+   Título - Grande y Ogro
+============================== */
+.title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 4em;
+    /* Más grande */
+    color: #f7e07a;
+    /* Amarillo brillante (Luz de Ciénaga/Oro) */
+    /* Múltiples sombras para el efecto de capa/comic */
+    text-shadow:
+        -2px -2px 0 #212818,
+        2px -2px 0 #212818,
+        -2px 2px 0 #212818,
+        2px 2px 0 #212818,
+        0 8px 15px rgba(0, 0, 0, 0.8);
+    margin: 0 0 40px 0;
+    /* Separar más los botones */
+    line-height: 1;
+}
+
+/* ==============================
+   Botones sorpresa - ¡En el fondo!
+============================== */
+.buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Reorganización: Los botones irán abajo en el diseño, dentro del contenedor */
+}
+
+.top-buttons {
+    display: flex;
+    justify-content: space-around;
+    /* Mejor espaciado para 2 botones */
+    width: 100%;
+    margin-bottom: 25px;
+    /* Espacio antes del botón solitario */
+    gap: 15px;
+    /* Espacio entre los botones superiores */
+}
+
+.surprise-button {
+    font-family: 'Luckiest Guy', cursive;
+    padding: 20px 15px;
+    /* Más padding para que sean más grandes */
+    border-radius: 15px;
+    /* Bordes más cuadrados, estilo ogro */
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    border: 5px solid #212818;
+    /* Borde de pantano */
+    color: #212818;
+    /* Texto oscuro de pantano */
+    text-shadow: 1px 1px 0 #f7e07a;
+    /* Pequeño realce amarillo */
+    box-shadow: 0 8px 0 #212818;
+    /* Sombra de botón grueso */
+    text-transform: uppercase;
+}
+
+/* Colores de Shrek: Verde Pantano, Morado de Hada Madrina (o un contraste), Naranja/Marrón */
+
+.button-1 {
+    /* Verde Ciénaga Vibrante */
+    background: linear-gradient(135deg, #92e03b, #6cae2d);
+}
+
+.button-2 {
+    /* Morado Misterioso de 'Far Far Away' */
+    background: linear-gradient(135deg, #a55eea, #7b3ceb);
+}
+
+.button-3 {
+    /* Naranja/Amarillo de Héroe */
+    background: linear-gradient(135deg, #f7b733, #fc4a1a);
+}
+
+.button-1,
+.button-2 {
+    width: 50%;
+    /* Ocupan la mitad cada uno */
+}
+
+.solo-button {
+    width: 90%;
+    max-width: 400px;
+    /* Más ancho */
+}
+
+.surprise-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0 #212818;
+    opacity: 0.95;
+}
+
+.surprise-button:active {
+    transform: translateY(6px);
+    /* El botón se hunde */
+    box-shadow: 0 2px 0 #212818;
+}
+
+.conditions {
+    color: #f7e07a;
+    /* Texto de condiciones amarillo */
+    font-size: 0.95em;
+    margin-top: 30px;
+    padding: 0 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+    line-height: 1.5;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px dashed #6cae2d;
+    /* Borde de la ciénaga */
+}
+
+/* ==============================
+   Modal (sin cambios funcionales, solo ajustes visuales)
+============================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #2e2e21;
+    /* Fondo de modal marrón oscuro */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 30px #6cae2d;
+    /* Sombra verde de Shrek */
+    border: 5px solid #a9804e;
+}
+
+.modal-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+}
+
+.modal-content p {
+    font-size: 1.3em;
+    color: #f7e07a;
+    font-family: 'Shrikhand', cursive;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #f7e07a;
+    font-size: 2.5em;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px 0 #2e2e21;
+}
+
+.close:hover {
+    color: #92e03b;
+}
+
+/* ==============================
+   Responsivo
+============================== */
+@media (max-width:650px) {
+    .title {
+        font-size: 3.5em;
+        margin-top: 10px;
+    }
+
+    .top-buttons {
+        flex-direction: column;
+        /* Apilamos los botones superiores en móviles */
+        gap: 10px;
+    }
+
+    .button-1,
+    .button-2 {
+        width: 90%;
+    }
+
+    .surprise-button {
+        font-size: 1.2em;
+        padding: 15px 10px;
+        box-shadow: 0 6px 0 #212818;
+    }
+
+    .surprise-button:active {
+        transform: translateY(4px);
+        box-shadow: 0 2px 0 #212818;
+    }
+
+    .shrek-back-button {
+        font-size: 1em;
+        padding: 6px 12px;
+        top: 15px;
+        left: 15px;
+    }
+}

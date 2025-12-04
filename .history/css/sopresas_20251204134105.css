@@ -1,0 +1,157 @@
+/* Importar la fuente para el título */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* --- 1. Estilos Globales y de Fondo (Body y Container) --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    /* Centrado más robusto */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    background-color: #333;
+    /* Fondo de reserva */
+}
+
+.container {
+    /* La imagen de fondo de Shrek y el burro */
+    background-image: url('/granada.png');
+    /* **IMPORTANTE: Mantén tu ruta de imagen aquí** */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Asegura que ocupe todo el espacio de visualización */
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Mantiene el título arriba y los botones abajo */
+    justify-content: space-between;
+    align-items: center;
+    /* Centra los elementos hijos horizontalmente */
+    box-sizing: border-box;
+    /* Incluye padding y border en el ancho/alto */
+}
+
+/* --- 2. Estilo del Título Principal --- */
+.title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 3.5em;
+    /* Ligeramente más grande */
+    color: #fff;
+    /* Blanco puro */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Sombra más suave y extendida */
+    margin-top: 50px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+/* --- 3. Contenedor de los Botones --- */
+.buttons-container {
+    width: 100%;
+    max-width: 450px;
+    /* Un poco más ancho */
+    padding-bottom: 50px;
+    /* Más espacio en la parte inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Asegura que los botones estén centrados */
+}
+
+/* --- 4. Estilo de los Botones (MEJORAS ESTÉTICAS) --- */
+.surprise-button {
+    width: 90%;
+    max-width: 350px;
+    /* Ancho máximo para mejor control */
+    padding: 18px 25px;
+    /* Más padding para un toque más grande */
+    margin: 12px 0;
+    /* Espaciado uniforme */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    /* Borde sutil */
+    border-radius: 40px;
+    /* Bordes más redondeados (píldora) */
+    font-size: 1.3em;
+    /* Texto más grande y legible */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    /* Sombra para el efecto 3D/Relieve */
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.25),
+        /* Sombra inferior oscura */
+        0 0 15px rgba(255, 255, 255, 0.1) inset;
+    /* Brillo interior sutil */
+}
+
+/* Estilo para el hover (interacción) */
+.surprise-button:hover {
+    transform: translateY(-2px);
+    /* Mueve ligeramente hacia arriba */
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2) inset;
+}
+
+.surprise-button:active {
+    transform: translateY(2px);
+    /* Presiona el botón hacia abajo */
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* Estilos de color de los botones */
+.button-1 {
+    background-color: #f5f5f5;
+    /* Blanco muy suave */
+    color: #444;
+}
+
+.button-2 {
+    background-color: #9ccc65;
+    /* Verde lima más vibrante */
+    color: #333;
+}
+
+.button-3 {
+    background-color: #f5f5f5;
+    color: #444;
+}
+
+/* --- 5. Estilo de la Nota Legal/Condiciones --- */
+.conditions {
+    color: #f0f0f0;
+    /* Blanco roto */
+    font-size: 0.9em;
+    margin-top: 25px;
+    padding: 0 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    /* Sombra más fuerte para mejor legibilidad */
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* --- 6. Media Query para Responsividad --- */
+@media (max-width: 480px) {
+    .title {
+        font-size: 3em;
+        margin-top: 30px;
+    }
+
+    .surprise-button {
+        width: 100%;
+        max-width: none;
+        font-size: 1.1em;
+    }
+
+    .conditions {
+        font-size: 0.75em;
+    }
+}

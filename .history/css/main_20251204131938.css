@@ -1,0 +1,127 @@
+/*
+    Estilos Generales
+*/
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*
+    Contenedor principal para centrar el contenido y aplicar el fondo
+*/
+.container {
+    width: 100%;
+    height: 100vh;
+
+    /* Fondo de imagen que ocupa toda la pantalla */
+    background-image: url('/Gemini_Generated_Image_ki9anuki9anuki9a.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* centrado horizontal y vertical */
+    background-size: cover;
+    /* cubre todo el contenedor */
+    background-attachment: fixed;
+    /* efecto parallax ligero */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20vh;
+    box-sizing: border-box;
+}
+
+/*
+    Estilos del Contenido (Texto)
+*/
+.content h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);;
+}
+
+.content p {
+    color: white;
+    font-size: 1.1em;
+    margin: 10px 0 30px;
+    font-style: italic;
+}
+
+/*
+    Estilos de Botones
+*/
+.buttons-section {
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: #e5ffe5;
+    color: #5d8e27;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    border: 1px solid white;
+}
+
+.primary-btn:hover {
+    background-color: #c9e0c9;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+    Estilos de la Sección de Video
+*/
+.video-section {
+    width: 90%;
+    margin: 20px 0;
+}
+
+.youtube-placeholder {
+    width: 100%;
+    padding-top: 56.25%;
+    /* Relación de aspecto 16:9 */
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.youtube-placeholder video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
