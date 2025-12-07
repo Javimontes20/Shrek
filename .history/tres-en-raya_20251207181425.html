@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quien gana decide el plan</title>
+    <style>
+        /* ==============================
+           ESTILOS GENERALES
+        ============================== */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #b3e283;
+            /* verde Shrek claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #1b4d00;
+            /* verde oscuro Shrek */
+            text-shadow: 2px 2px 4px #a0d080;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #turn {
+            margin-bottom: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #355e00;
+            text-align: center;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: #d0f0a0;
+            /* verde suave */
+            border: 3px solid #355e00;
+            /* verde oscuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .cell:hover {
+            background: #c0e080;
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 12px 25px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #355e00;
+            color: #fff;
+            font-size: 1.1em;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #1b4d00;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎮 Quien gana decide el plan, quien pierde paga 💰</h1>
+    <p id="turn">Turno de: Tú (X)</p>
+
+    <div class="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+
+    <button id="reset">Reiniciar Juego</button>
+
+    <script>
+        // ==============================
+        // LÓGICA DEL JUEGO TRUCADO
+        // ==============================
+        const cells = document.querySelectorAll('.cell');
+        const turnText = document.getElementById('turn');
+        const resetBtn = document.getElementById('reset');
+
+        let board = ["", "", "", "", "", "", "", "", ""];
+        let gameOver = false;
+
+        const wins = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        function checkWinner(player) {
+            return wins.some(([a, b, c]) =>
+                board[a] === player && board[b] === player && board[c] === player
+            );
+        }
+
+        function emptyCells() {
+            return board.map((val, i) => val === "" ? i : null).filter(v => v !== null);
+        }
+
+        function cheatingAI() {
+            // 1️⃣ Si tú puedes ganar, te da la victoria automáticamente
+            for (let [a, b, c] of wins) {
+                let line = [board[a], board[b], board[c]];
+                if (line.filter(v => v === "X").length === 2 && line.includes("")) {
+                    let idx = [a, b, c][line.indexOf("")];
+                    board[idx] = "X";
+                    cells[idx].textContent = "X";
+                    endGame("🎉 ¡Tú ganas! Escoge el plan 😉");
+                    return;
+                }
+            }
+
+            // 2️⃣ Si ella puede ganar, bloquea
+            for (let [a, b, c] of wins) {
+                let line = [board[a], board[b], board[c]];
+                if (line.filter(v => v === "O").length === 2 && line.includes("")) {
+                    let idx = [a, b, c][line.indexOf("")];
+                    board[idx] = "X"; // bloquea con tu X
+                    cells[idx].textContent = "X";
+                    return;
+                }
+            }
+
+            // 3️⃣ Si no hay peligro, juega en casilla aleatoria
+            let free = emptyCells();
+            if (free.length === 0) {
+                endGame("Empate 😅");
+                return;
+            }
+            let random = free[Math.floor(Math.random() * free.length)];
+            board[random] = "X";
+            cells[random].textContent = "X";
+        }
+
+        function endGame(msg) {
+            gameOver = true;
+            turnText.textContent = msg;
+        }
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                if (gameOver) return;
+                let index = cell.dataset.index;
+                if (board[index] !== "") return;
+
+                // Jugada de ella (O)
+                board[index] = "O";
+                cell.textContent = "O";
+
+                // Turno “truco” (siempre tú ganas)
+                cheatingAI();
+            });
+        });
+
+        resetBtn.addEventListener('click', () => {
+            board = ["", "", "", "", "", "", "", "", ""];
+            gameOver = false;
+            turnText.textContent = "Turno de: Tú (X)";
+            cells.forEach(c => c.textContent = "");
+        });
+    </script>
+</body>
+
+</html>
