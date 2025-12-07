@@ -66,7 +66,7 @@ header.content h1 {
     justify-content: flex-start;
     text-align: center;
     gap: 25px;
-    margin-top: 43px;
+    margin-top: 50px;
     /* más compacto */
 }
 
@@ -140,7 +140,7 @@ header.content h1 {
     width: 60%;
     max-width: 380px;
     /* más pequeño */
-    margin-top: 330px;
+    margin-top: 380px;
     /* empuja hacia abajo si hay espacio */
 }
 

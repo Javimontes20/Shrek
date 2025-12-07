@@ -51,7 +51,6 @@ header.content h1 {
     /* más pequeño */
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    
 }
 
 /* ==============================
@@ -65,8 +64,7 @@ header.content h1 {
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    gap: 25px;
-    margin-top: 43px;
+    gap: 15px;
     /* más compacto */
 }
 
@@ -76,7 +74,6 @@ header.content h1 {
     font-size: 0.95em;
     /* más pequeño */
     font-style: italic;
-    margin-top: 20px;
 }
 
 /* ==============================
@@ -137,10 +134,10 @@ header.content h1 {
    SECCIÓN DE VIDEO
 ============================== */
 .video-section {
-    width: 60%;
-    max-width: 380px;
+    width: 80%;
+    max-width: 480px;
     /* más pequeño */
-    margin-top: 330px;
+    margin-top: auto;
     /* empuja hacia abajo si hay espacio */
 }
 

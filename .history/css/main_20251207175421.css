@@ -76,7 +76,7 @@ header.content h1 {
     font-size: 0.95em;
     /* más pequeño */
     font-style: italic;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 /* ==============================
@@ -140,7 +140,7 @@ header.content h1 {
     width: 60%;
     max-width: 380px;
     /* más pequeño */
-    margin-top: 330px;
+    margin-top: 380px;
     /* empuja hacia abajo si hay espacio */
 }
 

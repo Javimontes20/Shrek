@@ -1,0 +1,104 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* sin scroll */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-image: url('../images/fondoo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* HEADER (H1 ARRIBA) */
+.header {
+    height: 20%;
+    /* parte superior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    font-family: 'Shrek Regular', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* CONTENIDO INFERIOR (60%) */
+.lower-content {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    padding-top: 10px;
+}
+
+/* TEXTO + BOTONES */
+.text-buttons {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px black;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+.primary-btn {
+    background-color: #ff9c00;
+}
+
+.secondary-btn {
+    background-color: #444;
+}
+
+/* VIDEO */
+.video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.responsive-video {
+    width: 85%;
+    max-height: 40%;
+    border-radius: 10px;
+}
