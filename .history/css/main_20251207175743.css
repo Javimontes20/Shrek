@@ -140,7 +140,7 @@ header.content h1 {
     width: 60%;
     max-width: 380px;
     /* más pequeño */
-    margin-top: 300px;
+    margin-top: 330px;
     /* empuja hacia abajo si hay espacio */
 }
 
