@@ -1,0 +1,216 @@
+/* ==============================
+Reset y Body
+============================== */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html,
+body {
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+
+body {
+font-family: Arial, sans-serif;
+color: white;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+background-color: #333;
+background-image: url('../images/granada.png');
+background-size: 240%;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+/* ==============================
+Botón de Volver
+============================== */
+.shrek-back-button {
+position: absolute;
+top: 20px;
+left: 20px;
+display: flex;
+align-items: center;
+gap: 8px;
+background: rgba(0, 0, 0, 0.45);
+border: none;
+border-radius: 25px;
+padding: 6px 14px;
+cursor: pointer;
+color: #fff;
+font-family: 'Shrikhand', cursive;
+font-size: 1em;
+font-weight: bold;
+transition: all 0.25s ease;
+z-index: 10;
+}
+
+.shrek-back-button:hover {
+background: rgba(0, 0, 0, 0.7);
+transform: scale(1.05);
+}
+
+.shrek-icon {
+width: 30px;
+height: 30px;
+border-radius: 50%;
+object-fit: cover;
+background-color: #92e03b;
+}
+
+/* ==============================
+Contenedor principal
+============================== */
+.container {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+height: 100%;
+padding: 20px;
+}
+
+/* ==============================
+Título
+============================== */
+.title {
+font-family: 'Shrikhand', cursive;
+font-size: 3.8em;
+color: #fff;
+text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+margin-top: 80px;
+margin-bottom: 40px;
+line-height: 1.1;
+}
+
+/* ==============================
+Botón Aleatorio (Principal)
+============================== */
+.surprise-button {
+font-family: 'Luckiest Guy', cursive;
+padding: 20px 32px;
+border-radius: 50px;
+font-size: 1.6em;
+font-weight: bold;
+cursor: pointer;
+border: none;
+color: #003300;
+background: linear-gradient(135deg, #7CFF5B, #36C72C);
+box-shadow: 0 0 18px rgba(124, 255, 91, 0.45);
+transition: all 0.25s ease-in-out;
+margin-bottom: 15px;
+}
+
+.surprise-button:hover {
+transform: scale(1.08);
+box-shadow: 0 0 25px rgba(124, 255, 91, 0.7);
+}
+
+.surprise-button:active {
+transform: scale(0.95);
+box-shadow: 0 0 12px rgba(124, 255, 91, 0.4);
+}
+
+/* ==============================
+Texto "Recuerda Siempre Gano"
+============================== */
+.container p {
+color: #fff;
+font-size: 1.1em;
+font-style: italic;
+margin-top: 10px;
+text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* ==============================
+Modal
+============================== */
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+position: relative;
+background-color: #222;
+padding: 25px;
+border-radius: 15px;
+text-align: center;
+max-width: 90%;
+max-height: 90%;
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.modal-content img {
+max-width: 100%;
+border-radius: 10px;
+margin-bottom: 15px;
+}
+
+.modal-content p {
+font-size: 1.2em;
+color: #fff;
+}
+
+/* ==============================
+Botón de Cerrar (X)
+============================== */
+.close {
+position: absolute;
+top: 15px;
+right: 25px;
+color: #fff;
+font-size: 2em;
+font-weight: bold;
+cursor: pointer;
+transition: 0.2s;
+}
+
+.close:hover {
+transform: scale(1.2);
+}
+
+/* ==============================
+Botones dentro del Modal
+============================== */
+.modal-button,
+#repeat-surprise {
+margin-top: 15px;
+padding: 12px 28px;
+font-size: 1.2em;
+font-weight: bold;
+cursor: pointer;
+border: none;
+border-radius: 50px;
+background: linear-gradient(135deg, #7CFF5B, #36C72C);
+color: #003300;
+box-shadow: 0 0 15px rgba(124, 255, 91, 0.6);
+transition: all 0.25s ease-in-out;
+}
+
+.modal-button:hover,
+#repeat-surprise:hover {
+transform: scale(1.07);
+box-shadow: 0 0 20px rgba(124, 255, 91, 0.9);
+}
+
+.modal-button:active,
+#repeat-surprise:active {
+transform: scale(0.95);
+box-shadow: 0 0 10px rgba(124, 255, 91, 0.5);
+}

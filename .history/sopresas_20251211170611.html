@@ -12,12 +12,8 @@
 <body>
     <div class="container">
         <h1 class="title">Elige tu Sorpresa</h1>
-
-        <!-- Footer con botón y texto -->
-        <div class="footer-buttons">
-            <button class="surprise-button">¡Sorpresa Aleatoria!</button>
-            <p>Recuerda: Siempre Gano</p>
-        </div>
+        <button class="surprise-button">¡Sorpresa Aleatoria!</button>
+        <p>Recuerda: Siempre Gano</p>
     </div>
 
     <!-- Botón de volver -->
@@ -34,12 +30,14 @@
             <p id="modal-text"></p>
 
             <button id="go-to-game" class="modal-button">Jugar Tres en Raya 🎮</button>
+
+            <!-- Nuevo botón -->
             <button id="repeat-surprise" class="modal-button">Otra sorpresa 🔄</button>
         </div>
     </div>
 
     <script>
-        const sorpresas = [
+       const sorpresas = [
             { img: 'images/nieve.png', text: 'Nieve ❄️<br>Vamos a la Nieve! Preparate para pasar frio y que se te encrespe el pelo con la humedad, espero que a Amancio Ortega le hayas comprado ropa para la nieve por que la vas a necesitar!' },
             { img: 'images/minigolf.png', text: 'Minigolf ⛳<br>Vamos a demostrar quien tiene menos punteria, ya sabemos quien es pero por reirnos un rato y darte una paliza' },
             { img: 'images/sendero.png', text: 'Senderismo 🥾<br>La mejor sorpresa que te podia tocar, nos vamos de SENDERISMO, preparate para tener agujetas durante dos semanas, no vale decir que no que te conzco' },
@@ -84,6 +82,7 @@
             window.location.href = 'tres-en-raya.html';
         });
 
+        // 👉 NUEVO BOTÓN FUNCIONAL
         const repeatBtn = document.getElementById('repeat-surprise');
         repeatBtn.addEventListener('click', () => {
             mostrarSorpresa();

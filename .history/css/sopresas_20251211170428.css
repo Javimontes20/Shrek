@@ -12,21 +12,21 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    /* Evita scroll */
 }
 
 body {
     font-family: Arial, sans-serif;
     color: white;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     background-color: #333;
     background-image: url('../images/granada.png');
     background-size: 240%;
     background-position: center;
     background-repeat: no-repeat;
-    text-align: center;
 }
 
 /* ==============================
@@ -72,6 +72,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* Título arriba, botón abajo */
+    align-items: center;
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -85,22 +87,13 @@ body {
     font-size: 3.8em;
     color: #fff;
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
-    margin-top: 50px;
+    margin-top: 80px;
+    margin-bottom: 0;
+    line-height: 1.1;
 }
 
 /* ==============================
-   Footer con Botón + Texto
-============================== */
-.footer-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-/* ==============================
-   Botón Aleatorio
+   Botón Aleatorio (Principal)
 ============================== */
 .surprise-button {
     font-family: 'Luckiest Guy', cursive;
@@ -114,7 +107,7 @@ body {
     background: linear-gradient(135deg, #7CFF5B, #36C72C);
     box-shadow: 0 0 18px rgba(124, 255, 91, 0.45);
     transition: all 0.25s ease-in-out;
-    margin-bottom: 10px;
+    margin-bottom: 60px;
 }
 
 .surprise-button:hover {
@@ -125,16 +118,6 @@ body {
 .surprise-button:active {
     transform: scale(0.95);
     box-shadow: 0 0 12px rgba(124, 255, 91, 0.4);
-}
-
-/* ==============================
-   Texto "Recuerda Siempre Gano"
-============================== */
-.footer-buttons p {
-    color: #fff;
-    font-size: 1.1em;
-    font-style: italic;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* ==============================
@@ -221,4 +204,10 @@ body {
 #repeat-surprise:active {
     transform: scale(0.95);
     box-shadow: 0 0 10px rgba(124, 255, 91, 0.5);
+}
+.container p {
+    color: white;
+    font-size: 0.95em;
+    font-style: italic;
+    margin-top: 20px;
 }
