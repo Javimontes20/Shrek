@@ -1,0 +1,32 @@
+/* ==============================
+   Botón "Otra sorpresa" (EL NUEVO)
+============================== */
+#repeat-surprise {
+    margin-top: 15px;
+    padding: 12px 28px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+
+    /* Colores llamativos */
+    background: linear-gradient(135deg, #7CFF5B, #36C72C);
+    color: #003300;
+
+    /* Sombra bonita */
+    box-shadow: 0 0 15px rgba(124, 255, 91, 0.6);
+
+    /* Animación */
+    transition: all 0.25s ease-in-out;
+}
+
+#repeat-surprise:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px rgba(124, 255, 91, 0.9);
+}
+
+#repeat-surprise:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(124, 255, 91, 0.5);
+}
